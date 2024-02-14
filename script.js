@@ -1,8 +1,18 @@
+let notesList = [];
+
 function generateNote(text) {
     let note = document.createElement("div");
     note.className = "note";
-    note.innerHTML = text;
+    note.innerHTML = text + "<button class='viewButton'>View</button> <button class='deleteButton'>X</button>";
     return note;
+}
+
+function generateNotesList() {
+    let notes = document.getElementById('notes');
+    notes.innerHTML = '';
+    for (let note of notesList) {
+        notes.appendChild(note);
+    }
 }
 
 function addNote() {
@@ -14,6 +24,7 @@ function addNote() {
     }
     else {
         let n = generateNote(val)
-        notes.appendChild(n);
+        notesList.push(n);
+        generateNotesList();
     }
 }
