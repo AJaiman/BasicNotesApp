@@ -8,3 +8,20 @@
     margin: 10px;
     margin-right: 80%;
 }
+
+.noteCard {
+    position: absolute;
+    top: 25%;
+    left: 25%;
+    right: 25%;
+    bottom: 50%;
+}
+
+.noteCardContent {
+    padding: 32px;
+    border-style: solid;
+    padding-right: 100px;
+    width: 600px;
+    height: max-content;
+    word-wrap: break-word;
+}
