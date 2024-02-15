@@ -3,7 +3,7 @@ let notesList = [];
 function generateNote(text, ind) {
     let note = document.createElement("div");
     note.className = "note";
-    note.innerHTML = text + `<button class='viewButton'>View</button> <button class='deleteButton' onclick='removeNote(${ind})'>X</button>`;
+    note.innerHTML = text + `<div class="buttons"><button class='viewButton'>View</button> <button class='deleteButton' onclick='removeNote(${ind})'>X</button></div>`;
     return note;
 }
 
