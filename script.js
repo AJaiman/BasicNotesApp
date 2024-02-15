@@ -43,14 +43,17 @@ function removeNote(ind) {
 
 function viewNote(ind) {
     let noteCard = document.getElementById('noteCard');
-    let noteCardContent = document.createElement('div');
-    noteCardContent.className = 'noteCardContent';
-    noteCardContent.innerHTML = `
-    <h1>${notesList[ind][0]}</h1>
-    <p>${notesList[ind][1]}</p>
-    <button class="deleteButton" id="closeNoteCard" onclick="closeNote()">X</button>
-    `;
-    noteCard.appendChild(noteCardContent);
+    if (noteCard.innerHTML == '') {
+        let noteCardContent = document.createElement('div');
+        noteCardContent.className = 'noteCardContent';
+        noteCardContent.innerHTML = `
+        <h1>${notesList[ind][0]}</h1>
+        <p>${notesList[ind][1]}</p>
+        <button class="deleteButton" id="closeNoteCard" onclick="closeNote()">X</button>
+        `;
+        noteCard.appendChild(noteCardContent);
+    }
+    console.log(noteCard.innerHTML)
 }
 
 function closeNote() {
