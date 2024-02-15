@@ -9,7 +9,7 @@
     margin-right: 80%;
 }
 
-.noteCard {
+#noteCard {
     position: absolute;
     top: 25%;
     left: 25%;
@@ -24,4 +24,10 @@
     width: 600px;
     height: max-content;
     word-wrap: break-word;
+}
+
+#closeNoteCard {
+    position: absolute;
+    top: 10px;
+    right: 20px;
 }
