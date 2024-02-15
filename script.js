@@ -12,21 +12,25 @@ function generateNotesList() {
     notes.innerHTML = '';
     let count = 0;
     for (let text of notesList) {
-        let note = generateNote(text, count);
+        let note = generateNote(text[0], count);
         notes.appendChild(note);
     }
 }
 
 function addNote() {
     let notes = document.getElementById("notes");
-    let input = document.querySelector("input");
-    let val = input.value;
-    input.value = '';
-    if (val == "") {
-        alert("Please enter a note!");
+    let noteInput = document.getElementById("note");
+    let titleInput = document.getElementById("title");
+    let noteVal = noteInput.value;
+    let titleVal = titleInput.value;
+    
+    if (noteVal == "" || titleVal == "") {
+        alert("Please complete both fields!");
     }
     else {
-        notesList.push(val);
+        notesList.push([titleVal, noteVal]);
+        noteInput.value = '';
+        titleInput.value = '';
         generateNotesList();
     }
 }
