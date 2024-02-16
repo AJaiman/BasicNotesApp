@@ -55,6 +55,7 @@ function viewNote(ind) {
         let popupBack = document.createElement('div');
         popupBack.id = 'popupBackground';
         document.querySelector('body').appendChild(popupBack);
+        setTimeout(() => {popupBack.onclick = closeNote}, 20);
     }
 }
 
