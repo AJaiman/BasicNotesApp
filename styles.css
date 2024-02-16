@@ -1,3 +1,15 @@
+#popupBackground {
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.6);
+}
+
 .note {
     display: flex;
     justify-content: space-between;
@@ -11,23 +23,25 @@
 
 #noteCard {
     position: absolute;
-    top: 25%;
-    left: 25%;
+    top: 10%;
+    left: 20%;
     right: 25%;
     bottom: 50%;
+    z-index: 2;
 }
 
 .noteCardContent {
     padding: 32px;
     border-style: solid;
-    padding-right: 100px;
-    width: 600px;
-    height: max-content;
+    width: 800px;
+    height: 400px;
+    overflow-y: scroll;
     word-wrap: break-word;
+    background-color: white;
 }
 
 #closeNoteCard {
     position: absolute;
-    top: 10px;
-    right: 20px;
+    top: 5%;
+    right: 0px;
 }

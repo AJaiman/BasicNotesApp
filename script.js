@@ -52,11 +52,15 @@ function viewNote(ind) {
         <button class="deleteButton" id="closeNoteCard" onclick="closeNote()">X</button>
         `;
         noteCard.appendChild(noteCardContent);
+        let popupBack = document.createElement('div');
+        popupBack.id = 'popupBackground';
+        document.querySelector('body').appendChild(popupBack);
     }
-    console.log(noteCard.innerHTML)
 }
 
 function closeNote() {
     let noteCard = document.getElementById('noteCard');
     noteCard.innerHTML = '';
+    let popupBack = document.getElementById('popupBackground');
+    popupBack.remove();
 }
