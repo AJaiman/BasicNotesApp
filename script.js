@@ -48,9 +48,15 @@ function viewNote(ind) {
         noteCardContent.className = 'noteCardContent';
         noteCardContent.innerHTML = `
         <h1>${notesList[ind][0]}</h1>
-        <p>${notesList[ind][1]}</p>
-        <button class="deleteButton" id="closeNoteCard" onclick="closeNote()">X</button>
+        <button class="deleteButton" id="closeNoteCard" onclick="closeNote(${ind})">X</button>
         `;
+
+        let noteCardEditor = document.createElement('input');
+        noteCardEditor.type = 'text';
+        noteCardEditor.id = 'noteCardEditor';
+        noteCardEditor.value = notesList[ind][1];
+        noteCardContent.appendChild(noteCardEditor);
+
         noteCard.appendChild(noteCardContent);
         let popupBack = document.createElement('div');
         popupBack.id = 'popupBackground';
@@ -59,8 +65,10 @@ function viewNote(ind) {
     }
 }
 
-function closeNote() {
+function closeNote(ind) {
     let noteCard = document.getElementById('noteCard');
+    let noteContent = document.getElementById('noteCardEditor');
+    notesList[ind][1] = noteContent.value;
     noteCard.innerHTML = '';
     let popupBack = document.getElementById('popupBackground');
     popupBack.remove();
