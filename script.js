@@ -19,7 +19,6 @@ function generateNotesList() {
 }
 
 function addNote() {
-    let notes = document.getElementById("notes");
     let noteInput = document.getElementById("note");
     let titleInput = document.getElementById("title");
     let noteVal = noteInput.value;
@@ -61,7 +60,8 @@ function viewNote(ind) {
         let popupBack = document.createElement('div');
         popupBack.id = 'popupBackground';
         document.querySelector('body').appendChild(popupBack);
-        setTimeout(() => {popupBack.onclick = closeNote}, 20);
+        clickOut = () => {closeNote(ind);}
+        setTimeout(() => {popupBack.onclick = clickOut}, 20);
     }
 }
 
