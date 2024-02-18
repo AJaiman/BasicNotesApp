@@ -50,9 +50,9 @@ function viewNote(ind) {
         <button class="deleteButton" id="closeNoteCard" onclick="closeNote(${ind})">X</button>
         `;
 
-        let noteCardEditor = document.createElement('input');
-        noteCardEditor.type = 'text';
+        let noteCardEditor = document.createElement('textarea');
         noteCardEditor.id = 'noteCardEditor';
+        noteCardEditor.onkeydown = textAreaAdjust;
         noteCardEditor.value = notesList[ind][1];
         noteCardContent.appendChild(noteCardEditor);
 
@@ -73,3 +73,9 @@ function closeNote(ind) {
     let popupBack = document.getElementById('popupBackground');
     popupBack.remove();
 }
+
+function textAreaAdjust() {
+    let element = document.getElementById('noteCardEditor');
+    element.style.height = "1px";
+    element.style.height = (25+element.scrollHeight)+"px";
+  }

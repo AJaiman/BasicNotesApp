@@ -45,3 +45,8 @@
     top: 5%;
     right: 0px;
 }
+
+#noteCardEditor {
+    width: 800px;
+    overflow: hidden;
+}
