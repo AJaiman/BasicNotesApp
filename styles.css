@@ -49,4 +49,9 @@
 #noteCardEditor {
     width: 800px;
     overflow: hidden;
+    border-style: none;
+}
+
+#noteCardEditor:focus {
+    outline: none;
 }
