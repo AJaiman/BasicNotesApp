@@ -61,6 +61,8 @@ function viewNote(ind) {
         clickOut = () => {closeNote(ind);}
         setTimeout(() => {popupBack.onclick = clickOut}, 20);
         textAreaAdjust();
+
+        document.getElementById('noteCardEditor').focus();
     }
 }
 
