@@ -50,6 +50,7 @@
     width: 800px;
     overflow: hidden;
     border-style: none;
+    resize: none;
 }
 
 #noteCardEditor:focus {
