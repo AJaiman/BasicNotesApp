@@ -19,18 +19,15 @@ function generateNotesList() {
 }
 
 function addNote() {
-    let noteInput = document.getElementById("note");
-    let titleInput = document.getElementById("title");
-    let noteVal = noteInput.value;
-    let titleVal = titleInput.value;
+    let noteInput = document.getElementById("newNoteInput");
+    let newNoteTitle = noteInput.value;
     
-    if (noteVal == "" || titleVal == "") {
-        alert("Please complete both fields!");
+    if (newNoteTitle == "") {
+        alert("Please the field!");
     }
     else {
-        notesList.push([titleVal, noteVal]);
+        notesList.push([newNoteTitle, '']);
         noteInput.value = '';
-        titleInput.value = '';
         generateNotesList();
     }
 }
