@@ -29,6 +29,7 @@ function addNote() {
         notesList.push([newNoteTitle, '']);
         noteInput.value = '';
         generateNotesList();
+        viewNote(notesList.length-1);
     }
 }
 
