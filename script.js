@@ -62,6 +62,7 @@ function viewNote(ind) {
         document.querySelector('body').appendChild(popupBack);
         clickOut = () => {closeNote(ind);}
         setTimeout(() => {popupBack.onclick = clickOut}, 20);
+        textAreaAdjust();
     }
 }
 
